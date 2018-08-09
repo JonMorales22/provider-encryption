@@ -21,15 +21,15 @@ var provDecipher = crypto.createDecipher(AES256, secret);
 var subCipher = crypto.createCipher(AES256, secret);
 var subDecipher = crypto.createDecipher(AES256, secret);
 
-var msg1 = "Hey prov, I'm sub";
-var eMsg1 = provCipher.update(msg1, 'utf8', 'hex');
-eMsg1 += provCipher.final('hex');
-console.log("prov says (clear): " + msg1);
-console.log("prov says (ciphered): " + eMsg1);
-console.log('\n');
+// var msg1 = "Hey prov, I'm sub";
+// var eMsg1 = provCipher.update(msg1, 'utf8', 'hex');
+// eMsg1 += provCipher.final('hex');
+// console.log("prov says (clear): " + msg1);
+// console.log("prov says (ciphered): " + eMsg1);
+// console.log('\n');
 
-var dMsg1 = subDecipher.update(eMsg1, 'hex', 'utf8');
+var dMsg1 = subDecipher.update("3239383033623238656533363133623666656163313834393930316162623164", 'hex', 'utf8');
 dMsg1 += subDecipher.final('utf8');
-console.log("sub receives (ciphered): " + eMsg1);
+//console.log("sub receives (ciphered): " + eMsg1);
 console.log("sub receives (deciphered): " + dMsg1);
 console.log('\n');
