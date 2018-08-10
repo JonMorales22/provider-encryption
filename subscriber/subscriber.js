@@ -13,7 +13,7 @@ const HDWalletProvider = require("truffle-hdwallet-provider-privkey");
 const HDWalletProviderMem = require("truffle-hdwallet-provider");
 
 //INSERT METAMASK WORDS!!!
-const web3 = new Web3(new HDWalletProviderMem(, INFURA_HTTP));
+const web3 = new Web3(new HDWalletProviderMem('hobby middle device shiver like square genuine girl dice tomorrow cave captain', INFURA_HTTP));
 
 const dispatch = new ZapDispatch({ networkId: 42, networkProvider: new Web3.providers.HttpProvider(INFURA_HTTP)} );
 const registry = new ZapRegistry({ networkId: 42, networkProvider: new Web3.providers.WebsocketProvider(INFURA_WS)} );
@@ -73,7 +73,8 @@ async function main() {
 	var query = await encrypt(secret, message);
 
 	// console.log(web3.utils.utf8ToHex(subPubPrepped));
-
+	console.log(secret)
+	console.log(query)
 	var queryTx = await dispatch.queryData({ 
 		provider: provAddress,
 	 	query: query, 
